@@ -1,0 +1,240 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+  animation: fadeIn 0.15s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background: var(--color-surface);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  width: 100%;
+  max-width: 480px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 5px 40px rgba(0, 255, 65, 0.15);
+  animation: slideUp 0.2s ease;
+}
+
+.modal-wide {
+  max-width: 720px;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.modal-header h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
+}
+
+.modal-close:hover {
+  background: var(--color-surface-hover);
+  color: #ffffff;
+}
+
+.share-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.share-inputs {
+  display: flex;
+  gap: 8px;
+}
+
+.share-inputs .input {
+  flex: 1;
+}
+
+.share-role-select {
+  width: 140px !important;
+  flex: 0 0 140px !important;
+  cursor: pointer;
+}
+
+.share-success {
+  background: rgba(0, 255, 65, 0.08);
+  border: 1px solid rgba(0, 255, 65, 0.3);
+  color: var(--color-success);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+}
+
+.shared-list {
+  margin-top: 24px;
+}
+
+.shared-list h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  margin-bottom: 12px;
+}
+
+.shared-user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.shared-user:last-child {
+  border-bottom: none;
+}
+
+.shared-user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.shared-user-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.shared-user-email {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.history-container {
+  min-height: 200px;
+}
+
+.history-loading,
+.history-empty {
+  text-align: center;
+  padding: 40px 0;
+  color: var(--color-text-secondary);
+}
+
+.history-layout {
+  display: flex;
+  gap: 20px;
+}
+
+.history-list {
+  flex: 0 0 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.history-current {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  background: var(--color-primary-light);
+  border: 1px solid rgba(0, 255, 65, 0.3);
+  border-radius: var(--radius-sm);
+  margin-bottom: 4px;
+}
+
+.history-label {
+  font-size: 12px;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.history-item {
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.history-item:hover,
+.history-item.selected {
+  border-color: var(--color-primary);
+  background: var(--color-surface-hover);
+}
+
+.history-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.history-version {
+  font-size: 13px;
+  font-weight: 600;
+  font-family: monospace;
+  color: var(--color-primary);
+}
+
+.history-item-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+.history-preview {
+  flex: 1;
+  min-width: 0;
+}
+
+.history-preview h3 {
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: var(--color-text-secondary);
+}
+
+.history-preview-content {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--color-text);
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 360px;
+  overflow-y: auto;
+}
