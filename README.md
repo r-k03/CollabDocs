@@ -127,14 +127,14 @@ This starts:
 
 ### Auth
 | Method | Endpoint           |  Auth |
-|--------|-------------------|-------------------|------|
+|--------|-------------------|-------------------|
 | POST   | /api/auth/register |  No   |
 | POST   | /api/auth/login    |  No   |
 | GET    | /api/auth/me       |  Yes  |
 
 ### Documents
 | Method | Endpoint                      |  Auth | Role    |
-|--------|------------------------------|----------------------|------|---------|
+|--------|------------------------------|----------------------|------|
 | POST   | /api/documents               |  Yes  | —       |
 | GET    | /api/documents               |  Yes  | —       |
 | GET    | /api/documents/:id           |  Yes  | Any     |
@@ -147,14 +147,14 @@ This starts:
 ### WebSocket Events
 
 | Event (Client → Server) |  Description              |
-|--------------------------|--------------------------------------|--------------------------|
+|--------------------------|--------------------------------------|
 | join_document            |  Join editing room        |
 | leave_document           |  Leave editing room       |
 | operation                |  Send edit operation      |
 | cursor_move              |  Broadcast cursor pos     |
 
 | Event (Server → Client)  |  Description              |
-|---------------------------|--------------------------------------|--------------------------|
+|---------------------------|--------------------------------------|
 | document_state            |  Initial state on join    |
 | operation_ack             |  Confirm applied op       |
 | remote_operation          |  Another user's edit      |
