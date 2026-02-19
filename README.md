@@ -126,42 +126,42 @@ This starts:
 ## API Endpoints
 
 ### Auth
-| Method | Endpoint           | Description       | Auth |
+| Method | Endpoint           |  Auth |
 |--------|-------------------|-------------------|------|
-| POST   | /api/auth/register | Create account    | No   |
-| POST   | /api/auth/login    | Get JWT token     | No   |
-| GET    | /api/auth/me       | Current user info | Yes  |
+| POST   | /api/auth/register |  No   |
+| POST   | /api/auth/login    |  No   |
+| GET    | /api/auth/me       |  Yes  |
 
 ### Documents
-| Method | Endpoint                      | Description          | Auth | Role    |
+| Method | Endpoint                      |  Auth | Role    |
 |--------|------------------------------|----------------------|------|---------|
-| POST   | /api/documents               | Create document      | Yes  | —       |
-| GET    | /api/documents               | List my documents    | Yes  | —       |
-| GET    | /api/documents/:id           | Get document         | Yes  | Any     |
-| PUT    | /api/documents/:id           | Update title         | Yes  | Editor+ |
-| DELETE | /api/documents/:id           | Delete document      | Yes  | Owner   |
-| POST   | /api/documents/:id/share     | Share with user      | Yes  | Owner   |
-| GET    | /api/documents/:id/history   | Version history      | Yes  | Any     |
-| POST   | /api/documents/:id/restore   | Restore version      | Yes  | Owner   |
+| POST   | /api/documents               |  Yes  | —       |
+| GET    | /api/documents               |  Yes  | —       |
+| GET    | /api/documents/:id           |  Yes  | Any     |
+| PUT    | /api/documents/:id           |  Yes  | Editor+ |
+| DELETE | /api/documents/:id           |  Yes  | Owner   |
+| POST   | /api/documents/:id/share     |  Yes  | Owner   |
+| GET    | /api/documents/:id/history   |  Yes  | Any     |
+| POST   | /api/documents/:id/restore   |  Yes  | Owner   |
 
 ### WebSocket Events
 
-| Event (Client → Server) | Payload                              | Description              |
+| Event (Client → Server) |  Description              |
 |--------------------------|--------------------------------------|--------------------------|
-| join_document            | { documentId }                       | Join editing room        |
-| leave_document           | { documentId }                       | Leave editing room       |
-| operation                | { documentId, operation }            | Send edit operation      |
-| cursor_move              | { documentId, cursor }               | Broadcast cursor pos     |
+| join_document            |  Join editing room        |
+| leave_document           |  Leave editing room       |
+| operation                |  Send edit operation      |
+| cursor_move              |  Broadcast cursor pos     |
 
-| Event (Server → Client)  | Payload                              | Description              |
+| Event (Server → Client)  |  Description              |
 |---------------------------|--------------------------------------|--------------------------|
-| document_state            | { document, role, activeUsers }      | Initial state on join    |
-| operation_ack             | { operation, version }               | Confirm applied op       |
-| remote_operation          | { operation, version, userId }       | Another user's edit      |
-| user_joined               | { userId, username, role }           | Presence: user joined    |
-| user_left                 | { userId, username }                 | Presence: user left      |
-| cursor_moved              | { userId, username, cursor }         | Remote cursor update     |
-| error_message             | { message }                          | Error notification       |
+| document_state            |  Initial state on join    |
+| operation_ack             |  Confirm applied op       |
+| remote_operation          |  Another user's edit      |
+| user_joined               |  Presence: user joined    |
+| user_left                 |  Presence: user left      |
+| cursor_moved              |  Remote cursor update     |
+| error_message             |  Error notification       |
 
 ---
 
