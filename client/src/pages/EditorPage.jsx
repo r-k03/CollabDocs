@@ -131,7 +131,7 @@ const EditorPage = () => {
     }
   }, [doc?.title, titleEditing]);
 
-  // Keep editor in sync with content from hook — only update if it differs
+  // Keep editor in sync with content from hook only update if it differs
   // to avoid cursor jumping on our own edits
   useEffect(() => {
     if (editorRef.current && content !== undefined) {
@@ -328,7 +328,7 @@ const EditorPage = () => {
 
       {!canEdit && (
         <div className="readonly-banner">
-          You have <strong>{role}</strong> access — this document is read-only for you.
+          You have <strong>{role}</strong> access - this document is read-only for you.
         </div>
       )}
 

@@ -150,7 +150,7 @@ const useDocument = (documentId) => {
       setConnected(true);
     };
 
-    // Server confirmed our operation — send next queued op
+    // Server confirmed our operation send next queued op
     const onOperationAck = (data) => {
       setVersion(data.version);
       versionRef.current = data.version;
