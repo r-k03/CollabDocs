@@ -1,4 +1,4 @@
-# CollabDocs — Real-Time Collaborative Editor
+# CollabDocs - Real-Time Collaborative Editor
 
 This is a full-stack collaboration project I built to practice real-time systems, backend architecture, and access control in a realistic way. The app supports live multi-user editing with operational updates (not full-document overwrites), role-based sharing, and Redis-backed scaling between server instances.
 
@@ -96,33 +96,6 @@ This double check matters because socket sessions are long-lived, roles can chan
 
 ---
 
-## Setup & Running
-
-### Prerequisites
-- Node.js 18+
-- MongoDB (local or Atlas)
-- Redis (local or cloud)
-
-### Quick Start
-
-```bash
-# 1. Clone and install
-git clone
-npm run install:all
-
-# 2. Create environment file
-# Add values for MongoDB + Redis
-
-# 3. Start both frontend and backend
-npm run dev
-```
-
-This starts:
-- **API server** at `http://localhost:5000`
-- **React dev server** at `http://localhost:3000`
-
----
-
 ## API Endpoints
 
 ### Auth
@@ -135,8 +108,8 @@ This starts:
 ### Documents
 | Method | Endpoint                      |  Auth | Role    |
 |--------|------------------------------|----------------------|------|
-| POST   | /api/documents               |  Yes  | —       |
-| GET    | /api/documents               |  Yes  | —       |
+| POST   | /api/documents               |  Yes  | -       |
+| GET    | /api/documents               |  Yes  | -       |
 | GET    | /api/documents/:id           |  Yes  | Any     |
 | PUT    | /api/documents/:id           |  Yes  | Editor+ |
 | DELETE | /api/documents/:id           |  Yes  | Owner   |
@@ -146,14 +119,14 @@ This starts:
 
 ### WebSocket Events
 
-| Event (Client → Server) |  Description              |
+| Event (Client to Server) |  Description              |
 |--------------------------|--------------------------------------|
 | join_document            |  Join editing room        |
 | leave_document           |  Leave editing room       |
 | operation                |  Send edit operation      |
 | cursor_move              |  Broadcast cursor pos     |
 
-| Event (Server → Client)  |  Description              |
+| Event (Server to Client)  |  Description              |
 |---------------------------|--------------------------------------|
 | document_state            |  Initial state on join    |
 | operation_ack             |  Confirm applied op       |
